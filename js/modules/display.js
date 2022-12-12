@@ -1,10 +1,13 @@
-import { addRemoveBtn } from "./firebase.js"
+import { addRemoveBtn, getMovies } from "./firebase.js"
 const movieSection = document.querySelector(`#movieSection`)
 const showBtn      = document.querySelector(`#showBtn`)
 
 
 function showMovieList(movieList) {
-    showBtn.addEventListener(`click`, () => {
+    showBtn.addEventListener(`click`, async () => {
+        
+        await getMovies();
+        
         console.log(movieList)
         movieList.forEach((movie) => {
             console.log(movie.id);
@@ -23,6 +26,8 @@ function showMovieList(movieList) {
         });
     })
 }
+
+
  
 // showMovieList();
 

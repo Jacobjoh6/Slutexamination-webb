@@ -1,8 +1,6 @@
 import { displaySearch } from "./modules/display.js";
 import {  saveToDatabase, getMovies, checkIfMovieExists } from "./modules/firebase.js"
 
-import { displaySearch } from "./modules/display.js";
-import {  saveToDatabase, getMovies, checkIfMovieExists } from "./modules/firebase.js"
 // import {  } from "./modules/display.js";
 
 

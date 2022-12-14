@@ -1,26 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>Moviebuff</title>
 </head>
 <body>
-    <h1>Movie buff</h1>
+    <header>
+       <h1 id="title">DE-VE-DE</h1> 
+    </header>
 
-    <h3>Input movie name</h3>
-    <input type="text" id="movieNameInput">
-    <h3>Input movie genre</h3>
-    <input type="text" id="movieGenreInput">
-    <h3>Input release date</h3>
+    <div class="topnav">
+        <h3 id="navH3">Back to the 80's</h3>
+       <input type="text" placeholder="search movie" id="searchInput">
+       <button id="searchBtn">search</button>
+    </div>
+
+<main>
+    <h3 class="inputH3">Input movie name</h3>
+    <input type="text" placeholder="Movie" id="movieNameInput">
+    <h3 class="inputH3">Input movie genre</h3>
+    <input type="text" placeholder="Genre" id="movieGenreInput">
+    <h3 class="inputH3">Input release date</h3>
     <input type="date" id="movieDateInput">
-    <button id="submitBtn">Submit movie</button>
+    <button id="submitBtn">Submit</button>
+</main>
     <hr>
-    <button id="showBtn">Show saved movies</button>
+    <button id="showBtn">View library</button>
 
     <section id="movieSection"></section>
+    <article id="movieSearch"></article>
 
     <script src="js/script.js" type="module"></script>
 </body>

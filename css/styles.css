@@ -1,0 +1,115 @@
+body {
+    height: 100vh;
+    background-color: #a2d2ff;
+    font-family: 'ArcadeClassic', sans-serif;
+    /* color: #cdb4db; */
+    text-decoration:dotted;
+}
+
+header{
+    text-align: center;
+
+    margin: 0;
+}
+
+header h1{
+    border-style: dashed;
+    padding: .2rem;
+    padding-left: 10px;
+    color: #cdace0;
+
+    animation-name: blinking;
+    animation-duration: 1s;
+    animation-iteration-count: 1000;
+}
+@keyframes blinking {
+    50% {
+      border-color: #ffcd5f;
+    }
+  }
+
+.topnav{
+    display: flex;
+    justify-content:space-between;
+}
+
+#navH3{
+    font-size: larger;
+}
+
+.topnav input{
+    justify-content: center;
+    background-color: #ffafcc;
+    color: #cdace0;
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.topnav button{
+    color: #9d2bdf;
+    background-color: #ffafcc;
+    border-radius: 2%;
+    min-width: 8.5rem;
+}
+
+main{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    border: 20rem;
+}
+
+.inputH3{
+    color: #cdace0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* all inputs for the movies */
+#movieNameInput{
+    background-color: #ffafcc;
+    color: #cdace0;
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#movieGenreInput{
+    background-color: #ffafcc;
+    color: #cdace0;
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#movieDateInput{
+    background-color: #ffafcc;
+    color: #cdace0;
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#submitBtn{
+    background-color: #ffafcc;
+    color: #cdace0;
+    font-family: 'ArcadeClassic', sans-serif;
+    font-size: 2.2rem;
+}
+/*  */
+
+#showBtn{
+    color: #0c0013;
+    background-color: rgb(110, 189, 235);
+    font-size: larger;
+    font-family: 'ArcadeClassic', sans-serif;
+    border-style:outset;
+    border-block-start-color: #edecee;
+    border-block-end-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.delBtn{
+    
+}

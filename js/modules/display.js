@@ -1,6 +1,9 @@
-import { addRemoveBtn, getMovies } from "./firebase.js"
-const movieSection = document.querySelector(`#movieSection`)
-const showBtn      = document.querySelector(`#showBtn`)
+
+import { addRemoveBtn, getMovies, checkIfMovieExists } from "./firebase.js"
+const movieSection = document.querySelector(`#movieSection`);
+const showBtn      = document.querySelector(`#showBtn`);
+const movieSearch  = document.querySelector(`#movieSearch`);
+
 
 
 function showMovieList(movieList) {
@@ -15,20 +18,31 @@ function showMovieList(movieList) {
             
         const movieListElem = 
         `
-        <li>Name: ${movie.data().name}</li>
-        <li>Genre: ${movie.data().genre}</li>
-        <li>Released: ${movie.data().date}</li>
+        <p>Title: ${movie.data().name}</p>
+        <p>Genre: ${movie.data().genre}</p>
+        <p>Released: ${movie.data().date}</p>
         <button class="delBtn" data-movie-id="${movie.id}">Delete movie</button>
         `
             
-            movieSection.insertAdjacentHTML(`beforeend`, movieListElem)
+            movieSection.insertAdjacentHTML(`afterbegin`, movieListElem)
             addRemoveBtn();
         });
     })
 }
 
-
+async function displaySearch(movie) {
+    const viewMovie = await checkIfMovieExists(movie)
+    let template = 
+    `
+    <article>
+        <h2>${viewMovie.data().name}</h2>
+        <p>${viewMovie.data().genre}</p>
+        <p>${viewMovie.data().date}</p>
+    </article>
+    `
+    movieSearch.insertAdjacentHTML(`beforeend`, template)
+}
  
 // showMovieList();
 
-export { showMovieList }
+export { showMovieList, displaySearch }

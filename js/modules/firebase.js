@@ -1,6 +1,7 @@
+
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, where } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
   import { showMovieList } from "./display.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -51,12 +52,35 @@
             delBtn.addEventListener(`click`, async (event) => {
                 const movieId = event.target.getAttribute(`data-movie-id`)
                 await removeFromDatabase(movieId)
-
-                getMovies();
                 
             })
         })
     }
+
+    async function checkIfMovieExists(movie) {
+      
+        console.log(movie);
+        try {
+            const movieQuery = query(collection(db, `movieCollection`), where(`name`, `==`, movie));
+            const result = await getDocs(movieQuery);
+            let resultMovie = {};
+
+            result.forEach((movie) => {
+            resultMovie = movie;
+        });
+
+        console.log(resultMovie.data());
+        return resultMovie;
+        } catch (error) {
+            console.log(`error`);
+        }
+        
+    }
+
+    // async function compareSearch(movie) {
+
+    // }
+    // resultMovie.data() används för att visa det som en användare matar in
     
 
-  export { saveToDatabase, getMovies, addRemoveBtn }        
+  export { saveToDatabase, getMovies, addRemoveBtn, checkIfMovieExists }          

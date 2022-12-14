@@ -58,7 +58,6 @@
     }
 
     async function checkIfMovieExists(movie) {
-      
         console.log(movie);
         try {
             const movieQuery = query(collection(db, `movieCollection`), where(`name`, `==`, movie));

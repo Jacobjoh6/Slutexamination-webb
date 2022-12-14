@@ -1,3 +1,5 @@
+import { displaySearch } from "./modules/display.js";
+import {  saveToDatabase, getMovies, checkIfMovieExists } from "./modules/firebase.js"
 
 import { displaySearch } from "./modules/display.js";
 import {  saveToDatabase, getMovies, checkIfMovieExists } from "./modules/firebase.js"
@@ -8,6 +10,8 @@ const movieNameInput  = document.querySelector(`#movieNameInput`);
 const movieGenreInput = document.querySelector(`#movieGenreInput`);
 const movieDateInput  = document.querySelector(`#movieDateInput`);
 const submitBtn       = document.querySelector(`#submitBtn`);
+const searchBtn       = document.querySelector(`#searchBtn`);
+const searchInput     = document.querySelector(`#searchInput`);
 const searchBtn       = document.querySelector(`#searchBtn`);
 const searchInput     = document.querySelector(`#searchInput`);
 let movie = {
@@ -25,6 +29,13 @@ submitBtn.addEventListener(`click`, () => {
     console.log(movie);
 
     saveToDatabase(movie);
+  })
+
+  searchBtn.addEventListener(`click`, () => {
+    const userInput = searchInput.value
+    checkIfMovieExists(userInput);
+    displaySearch(userInput);
+    })
   })
 
   searchBtn.addEventListener(`click`, () => {

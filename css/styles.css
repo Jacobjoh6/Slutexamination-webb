@@ -129,7 +129,9 @@ main{
 #movieSearch{
     color: #9d2bdf;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    justify-content: space-evenly;
 }
 
 .delBtn{

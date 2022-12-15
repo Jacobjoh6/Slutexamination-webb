@@ -1,3 +1,9 @@
+
+// Det är i denna modul som allting hämtas och körs från. exempelvis sp fins alla knappar som hämtar diverse funktioner
+// jag har vidare delat upp i tre olika moduler som alla har olika funktioner för att hålla rörigheten minimal
+
+
+
 import { displaySearch } from "./modules/display.js";
 import {  saveToDatabase, getMovies, checkIfMovieExists } from "./modules/firebase.js"
 

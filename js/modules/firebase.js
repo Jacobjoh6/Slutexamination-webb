@@ -1,4 +1,7 @@
 
+// Denna modul har hand om alla funktioner som har med firebase att göra.
+
+
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
   import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, where } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
@@ -74,5 +77,5 @@
             console.log(`error`);
         }
     }   
-    
+
   export { saveToDatabase, getMovies, addRemoveBtn, checkIfMovieExists }        

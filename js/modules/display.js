@@ -1,4 +1,11 @@
 
+
+
+// Det är i denna modul som allt som exemplevis ändras i DOM finns. 
+// Det är också här som all all info hämtad från de olika kollektionerna i firebase visas. 
+// Dessa då hämtade från firebase modulen och sedan exoprterade till bl.a knapparna i script modulen.
+
+
 import { addRemoveBtn, getMovies, checkIfMovieExists } from "./firebase.js"
 const movieSection = document.querySelector(`#movieSection`);
 const showBtn      = document.querySelector(`#showBtn`);

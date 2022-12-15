@@ -10,6 +10,7 @@ const movieDateInput  = document.querySelector(`#movieDateInput`);
 const submitBtn       = document.querySelector(`#submitBtn`);
 const searchBtn       = document.querySelector(`#searchBtn`);
 const searchInput     = document.querySelector(`#searchInput`);
+const mainElem        = document.querySelector(`main`)
 
 let movie = {
   name: ``,
@@ -33,6 +34,11 @@ submitBtn.addEventListener(`click`, () => {
     checkIfMovieExists(userInput);
     displaySearch(userInput);
     })
+
+
+    // mainElem.classList.add(`hide`)
+
+
 
 
   // searchBtn.addEventListener(`click`, () => {

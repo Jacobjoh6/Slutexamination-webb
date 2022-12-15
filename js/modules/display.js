@@ -21,7 +21,7 @@ function showMovieList(movieList) {
         <p>Title: ${movie.data().name}</p>
         <p>Genre: ${movie.data().genre}</p>
         <p>Released: ${movie.data().date}</p>
-        <button class="delBtn" data-movie-id="${movie.id}">Delete movie</button>
+        <button class="delBtn" data-movie-id="${movie.id}">X</button>
         `
             
             movieSection.insertAdjacentHTML(`afterbegin`, movieListElem)
@@ -34,7 +34,7 @@ async function displaySearch(movie) {
     const viewMovie = await checkIfMovieExists(movie)
     let template = 
     `
-    <article>
+    <article class="movieSearch">
         <h2>${viewMovie.data().name}</h2>
         <p>${viewMovie.data().genre}</p>
         <p>${viewMovie.data().date}</p>

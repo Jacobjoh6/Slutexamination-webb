@@ -44,7 +44,7 @@ header h1{
 #searchBtn{
     font-family: 'ArcadeClassic', sans-serif;
     font-size: medium;
-    border-radius: 3px;
+    border-radius: 5px;
     color: #0c0013;
 }
 
@@ -121,6 +121,17 @@ main{
     border-radius: 10px;
 }
 
+#movieSection{
+    display: block;
+    color: #a862aa;
+}
+
+#movieSearch{
+    color: #9d2bdf;
+    display: flex;
+    justify-content: center;
+}
+
 .delBtn{
     font-family: 'ArcadeClassic', sans-serif;
     color: red;
@@ -128,3 +139,15 @@ main{
     background-color: transparent;
     border: none;
 }
+
+.backBtn{
+    background-color: rgb(110, 189, 235);
+    color: #ffcd5f;
+    font-size: larger;
+    font-family: 'ArcadeClassic', sans-serif;
+    border-style:outset;
+    border-block-start-color: #edecee;
+    border-block-end-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+

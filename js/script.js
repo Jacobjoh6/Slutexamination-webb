@@ -11,6 +11,9 @@ const submitBtn       = document.querySelector(`#submitBtn`);
 const searchBtn       = document.querySelector(`#searchBtn`);
 const searchInput     = document.querySelector(`#searchInput`);
 const mainElem        = document.querySelector(`main`)
+const showBtn         = document.querySelector(`#showBtn`)
+const backBtn         = document.querySelector(`.backBtn`)
+const movieSection    = document.querySelector(`#movieSection`)
 
 let movie = {
   name: ``,
@@ -18,6 +21,7 @@ let movie = {
   date: ``
 }
 
+backBtn.classList.add(`hide`);
 
 submitBtn.addEventListener(`click`, () => {
     movie.name  = movieNameInput.value
@@ -25,7 +29,7 @@ submitBtn.addEventListener(`click`, () => {
     movie.date  = movieDateInput.value
 
     console.log(movie);
-
+  
     saveToDatabase(movie);
   })
 
@@ -35,17 +39,18 @@ submitBtn.addEventListener(`click`, () => {
     displaySearch(userInput);
     })
 
+    showBtn.addEventListener(`click`, () => {
+      mainElem.classList.add(`hide`)
+      backBtn.classList.remove(`hide`)
+      movieSection.classList.remove(`hide`)
+    })
 
-    // mainElem.classList.add(`hide`)
+    backBtn.addEventListener(`click`, () => {
+      mainElem.classList.remove(`hide`)
+      movieSection.classList.add(`hide`)
+      backBtn.classList.add(`hide`)
+    })
 
-
-
-
-  // searchBtn.addEventListener(`click`, () => {
-  //   const userInput = searchInput.value
-  //   // const resultMovie = movie
-  //   displaySearch(userInput);
-  //   })
 
   getMovies();
 

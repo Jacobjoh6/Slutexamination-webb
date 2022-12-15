@@ -73,12 +73,6 @@
         } catch (error) {
             console.log(`error`);
         }
-    }
-
-    // async function compareSearch(movie) {
-
-    // }
-    // resultMovie.data() används för att visa det som en användare matar in
+    }   
     
-
   export { saveToDatabase, getMovies, addRemoveBtn, checkIfMovieExists }        
